@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
+			auth: localStorage.getItem('token') || false,
 			demo: [
 				{
 					title: "FIRST",
@@ -16,6 +17,69 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			getUserData: async () =>{
+				try {
+					const response =await fetch(process.env.BACKEND_URL+ '/api/protected',{
+						method: 'GET',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': `Bearer ${localStorage.getItem('token')}`
+						},
+					})
+					if(!response.ok) throw new Error("error fetching user data");
+					const data = await response.json()
+					console.log(data)
+					setStore({user: data.user})
+				} catch (error) {
+					console.error(error)
+				}
+			},
+
+			register: async (formData) =>{
+				try {
+					const response =await fetch(process.env.BACKEND_URL+ '/api/register',{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(formData)
+					})
+					if(!response.ok) throw new Error("error registering");
+					const data = await response.json()
+					console.log(data)
+					localStorage.setItem('token', data.token)
+					setStore({auth: true, token: data.token})
+					return true
+				} catch (error) {
+					console.error(error)
+					return false
+				}
+			},
+			login: async (formData) =>{
+				try {
+					const response =await fetch(process.env.BACKEND_URL+ '/api/login',{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(formData)
+					})
+					if(!response.ok) throw new Error("error logging in");
+					const data = await response.json()
+					console.log(data)
+					localStorage.setItem('token', data.token)
+					setStore({auth: true, token: data.token})
+					return true
+				} catch (error) {
+					console.error(error)
+					return false
+				}
+			},
+			logout: () =>{
+				localStorage.removeItem('token')
+				setStore({auth: false, token: null})
+			},
+			
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
