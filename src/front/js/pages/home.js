@@ -11,7 +11,7 @@ useEffect(()=>{
 	return (
 		<div className="text-center mt-5">
 			<div className="container justify-content-center">
-				<h2>Autenticacion JWT</h2>
+				<h1>Autenticacion JWT</h1>
 				{store.user?.name ? <h2>Bienvenido {store.user?.name}</h2> : <h2>Bienvenido invitado</h2>}
 			</div>
 		</div>

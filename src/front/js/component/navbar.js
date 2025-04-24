@@ -13,7 +13,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-ligth border-bottom border-body" data-bs-theme="ligth">
+    <nav className="navbar navbar-expand-lg border-bottom border-body" data-bs-theme="secondary">
       <div className="container px-2">
         <a className="navbar-brand" href="/">Autenticacion JWT</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ export const Navbar = () => {
               <a className="nav-link" href="/login">Login</a>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggler" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Perfil
               </a>
               <ul className="dropdown-menu dropdown-menu-end">

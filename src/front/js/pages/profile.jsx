@@ -27,7 +27,7 @@ import { useNavigate } from "react-router-dom";
             </div>
             <div className="d-grid gap-2">
                 <button 
-                    className="btn btn-danger  btn-sm" 
+                    className="btn btn-danger" 
                     onClick={handleLogout}
                 >
                     Cerrar sesión
