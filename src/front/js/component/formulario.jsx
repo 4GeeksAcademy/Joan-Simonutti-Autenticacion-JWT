@@ -30,13 +30,13 @@ export const Formulario = ({ type }) => {
             
             {type === 'register' && (
                     <div className="mb-2 row">
-                        <label htmlFor="staticName" className="col-sm-2 col-form-label">Name</label>
+                        <label htmlFor="staticName" className="col-sm-2 col-form-label">Nombre</label>
                         <div className="col-sm-10">
                             <input
                                 type="text"
                                 className="form-control"
                                 name="name"
-                                placeholder="name"
+                                placeholder="Nombre"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
@@ -52,7 +52,7 @@ export const Formulario = ({ type }) => {
                             type="email"
                             className="form-control"
                             name="email"
-                            placeholder="email"
+                            placeholder="Email"
                             value={formData.email}
                             onChange={handleChange}
                             required
@@ -66,7 +66,7 @@ export const Formulario = ({ type }) => {
                             type="password"
                             className="form-control"
                             name="password"
-                            placeholder="password"
+                            placeholder="Password"
                             value={formData.password}
                             onChange={handleChange}
                             required

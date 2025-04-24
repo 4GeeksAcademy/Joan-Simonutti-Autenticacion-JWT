@@ -1,7 +1,19 @@
-/*
-    home.css: This website contains selectors only used in home.css
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2b002e, #4a0e30);
+    color: #ffffff;
+    min-height: 100vh;   
+  }
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+  .enlacefooter {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .enlacefooter:hover {
+    color: #fe9e0d;
+    text-shadow: 0 0 6px rgba(254, 158, 13, 0.7);
+  }

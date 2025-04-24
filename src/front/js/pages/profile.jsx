@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
             <h3 className="card-title mb-4">Perfil de Usuario</h3>
             <div className="mb-3">
                 <p className="mb-1"><strong>Nombre:</strong> {store.user?.name}</p>
-                <p className="mb-1"><strong>Correo:</strong> {store.user?.email}</p>
+                <p className="mb-1"><strong>Email:</strong> {store.user?.email}</p>
             </div>
             <div className="d-grid gap-2">
                 <button 
